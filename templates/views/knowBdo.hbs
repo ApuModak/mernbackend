@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Villege survey</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/aos.css">
+     <link rel="stylesheet" href="css/owl.carousel.min.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/survey.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+</head>
+<body>
+ <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+             <i class="fa fa-unity"></i>
+              WE  STAND WITH YOU
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link smoothScroll">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="AdminUpdate" class="nav-link smoothScroll">Administrative Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminReg" class="nav-link smoothScroll">Administrative Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">New Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="KnowPlace.html" class="nav-link contact">More About Place</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- ABOUT -->
+     <section class="about section-padding pb-0" id="about">
+         <div class="container">
+               <div class="row">
+
+                    <div >
+                         <div class="col-lg-7 mx-auto col-md-10 col-12" class="table">
+
+
+                              <h2 >KNOW ABOUT THE INFORMATION OF  </h2>
+
+                              <p class="mb-0" data-aos="fade-up"><h2><strong>{{name}}</strong></h2><br><br>
+                      <table>
+                          <thead>
+                              <tr>
+                           <th>about</th>
+                          <th>Total No</th>
+                          <th>Rating</th>
+                          <th> </th>
+                                  </tr>
+                           </thead>
+                              <tbody>
+                             <tr class="ques_a">
+                                 <td>KUTCHA HOUSE</td>
+                                <td>{{user.rating}} </td>
+                               
+                               <td>
+                              <div class="stars-outer">
+                             <div class="stars-inner"></div>
+                                 </div>
+                              </td>
+                              
+                                 </tr>
+                         
+
+                                    </tbody>
+                          </table>
+                            
+                              </div>
+
+                         <div class="about-image" data-aos="fade-up" data-aos-delay="200">
+
+                          <img src="images/office.png" class="img-fluid" alt="office">
+                        </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+<footer class="site-footer">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
+            <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Let's do <strong>Something </strong> new.</h1>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+            <h4 class="my-4">Contact Info</h4>
+
+            <p class="mb-1">
+              <i class="fa fa-phone mr-2 footer-icon"></i> 
+              +7076894493
+            </p>
+
+            <p>
+              <a href="#">
+                <i class="fa fa-envelope mr-2 footer-icon"></i>
+                santumodak@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+            <h4 class="my-4">Our Branch</h4>
+
+            <p class="mb-1">
+              <i class="fa fa-home mr-2 footer-icon"></i> 
+             Jadavpur University -Jadavpur, West Bengal, India
+            </p>
+          </div>
+
+     
+          <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+            
+            <ul class="footer-link">
+              <li><a href="#">about us</a></li><br>
+              <li><a href="#">Work with us</a></li><br>
+              <li><a href="#">Donate us to help poor</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+            <ul class="social-icon">
+              <li><a href="#" class="fa fa-instagram"></a></li>
+              <li><a href="#" class="fa fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-facebook"></a></li>
+             <li><a href="#" class="fa fa-whatsapp"></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+<script>
+const ratings = {
+  ques_a :{{user.rating}}
+  
+};
+
+const starTotal = 5;
+ 
+for(const rating in ratings) {  
+  // 2
+  const starPercentage = (ratings[rating] / starTotal) * 100;
+  // 3
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  // 4
+  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+}
+</script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>

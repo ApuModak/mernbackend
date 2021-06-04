@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+     <title>Villege survey</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/aos.css">
+     <link rel="stylesheet" href="css/owl.carousel.min.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/survey.css">
+
+</head>
+<body>
+
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+             <i class="fa fa-unity"></i>
+              WE STAND WITH YOU
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link smoothScroll">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="AdminUpdate" class="nav-link smoothScroll">Administrative Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminReg" class="nav-link smoothScroll">Administrative Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">New Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="KnowPlace.html" class="nav-link contact">More About Place</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- CONTACT -->
+     <!-- CONTACT -->
+     <section class="contact section-padding">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-6 mx-auto col-md-7 col-12 py-5 mt-5 text-center" data-aos="fade-up">
+
+                      <h1 class="mb-4">Please fill up the Registration Form </h1>
+
+                      <p><strong>(Wrong Information can be harmful for you)</strong></p>
+                    </div>
+
+                    <div class="col-lg-8 mx-auto col-md-10 col-12">
+                   
+                      <form action="/register" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form">
+                        <div class="row">
+                          <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="name" placeholder="Name">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="adhar" placeholder="Aadhaar Number">
+                          </div>
+               
+                          <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="fathername" placeholder="Father's Name">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="mothername" placeholder="Mother's Name">
+                          </div>
+                          <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="Distric" placeholder="District">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="block" placeholder="Block ">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="village" placeholder="Village">
+                          </div>
+                            <div class="col-lg-6 col-12">
+                            <input type="text" class="form-control" name="pinno" placeholder="Pin No">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            
+                           <select name="quali" class="formregister">
+                              <option value="" selected>Education</option>
+                              <option  value="secondary">Secondary </option>
+                              <option  value="Higher Secondary">Higher Secondary </option>
+                              <option value="Betech/BE">Btech/BE </option>
+                              <option value="MBBS">MBBS </option>
+                              <option  value="honours">Honors </option>
+                              <option   value="Diploma">Diploma </option>
+                            </select>
+                           </div>
+
+                           <div class="col-lg-6 col-12">
+                           <select name="skill" class="formregister">
+                            <option value=""selected>Skill</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Engineer">IT Engineer</option>
+                             <option value="Carpenters">Carpenter</option>
+                              <option value="Electrician">Electrician </option>
+                              <option value="class 11">Plumber </option>
+                              <option value="labour">Labour</option>
+                        
+                           </select>
+                          </div>
+                          <br>
+                          <div class="col-lg-6 col-12">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
+                          </div>
+                         <div class="col-lg-6 col-12">
+                            <input type="phone" class="form-control" name="phone" placeholder="phone no">
+                          </div>
+
+                           <div class="col-lg-6 col-12">
+                            <input type="password" class="form-control" name="password" placeholder="password">
+                          </div>
+                           <div class="col-lg-6 col-12">
+                            <input type="password" class="form-control" name="repassword" placeholder="re password">
+                          </div>
+                                             <div>
+                 </label><br>  
+             <legend>1. Your house is</legend> 
+                <input type="radio" name="home" value="Kachha"/> Kutcha<br>  
+            <input type="radio" name="home"  value="Pukka"/> Pucca<br>
+             <legend>2. How many rooms do you have?</legend>  
+             <input type="radio" name="family" value="One" /> One  
+             <br>  
+              <input type="radio" name="family" value="Two" /> Two  
+             <br> 
+              <input type="radio" name="family" value="Above Two" /> More than Two  
+             <br> 
+             <legend>3. How much rating will you give for your area's road condition?</legend>
+              <input type="radio" name="answer" value="1" /> 1 
+             <br>
+              <input type="radio" name="answer" value="2" /> 2 
+             <br>
+              <input type="radio" name="answer" value="3" /> 3 
+             <br>
+              <input type="radio" name="answer" value="4" /> 4 
+             <br>
+              <input type="radio" name="answer" value="5" /> 5 
+             <br>
+            <legend>4. Do you have any hospital within 1-2 kilometres?</legend> 
+           <input type="radio" name="hospital"  value="hyes" > Yes
+           <br>
+           <input type="radio" name="hospital"  value="hno" > No
+         <legend>5. Have you got any free medical facility from the Government?</legend> 
+         <input type="radio" name="medical"  value="myes" > Yes
+         <br>
+         <input type="radio" name="medical"  value="mno" > No
+         <br>
+  <legend>6. Are you Employed?</legend> 
+    <input type="radio" name="employee" value="eyes" > Yes
+    <br>
+    <input type="radio" name="employee" value="eno" > No
+    <br>
+    <legend>7. Have you got any other facility from the Government?</legend> 
+         <input type="radio" name="facility"  value="myes" > Yes
+         <br>
+         <input type="radio" name="facility"  value="mno" > No
+         <br>
+      
+           <label>   
+             </div>
+
+                          <div class="col-lg-5 mx-auto col-7">
+                            <button type="submit" class="form-control" id="submit-button" name="submit">Submit</button>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
+            <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">Let's do <strong>Something </strong> new.</h1>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+            <h4 class="my-4">Contact Info</h4>
+
+            <p class="mb-1">
+              <i class="fa fa-phone mr-2 footer-icon"></i> 
+              +7076894493
+            </p>
+
+            <p>
+              <a href="#">
+                <i class="fa fa-envelope mr-2 footer-icon"></i>
+                santumodak@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
+            <h4 class="my-4">Our Branch</h4>
+
+            <p class="mb-1">
+              <i class="fa fa-home mr-2 footer-icon"></i> 
+             Jadavpur University -Jadavpur, West Bengal, India
+            </p>
+          </div>
+
+     
+          <div class="col-lg-4 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+            
+            <ul class="footer-link">
+              <li><a href="#">Stories</a></li>
+              <li><a href="#">Work with us</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mx-lg-auto col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+            <ul class="social-icon">
+              <li><a href="#" class="fa fa-instagram"></a></li>
+              <li><a href="#" class="fa fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-facebook"></a></li>
+             <li><a href="#" class="fa fa-whatsapp"></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>
