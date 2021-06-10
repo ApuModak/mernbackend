@@ -44,30 +44,8 @@ app.set("views",template_path );
 
 
 app.get('/',async (req,res) => {
-
-  var n= await Register.find().sort({rating:+1}).limit(1);
-   var m=await AdminRegister.find({pin:n[0].pinno});
-  var v=[];
-          v[1]=await Register.find({pinno:n[0].pinno}).countDocuments();
-            v[2]=await Register.find({$and:[{pinno:n[0].pinno},{home:"Kachha"}]}).countDocuments();
-            v[3]=await Register.find({$and:[{pinno:n[0].pinno},{home:"Pukka"}]}).countDocuments();
-           v[4]=await Register.find({$and:[{pinno:n[0].pinno},{family:"One"}]}).countDocuments();
-            v[5]=await Register.find({$and:[{pinno:n[0].pinno},{family:"Two"}]}).countDocuments();
-            v[6]=await Register.find({$and:[{pinno:n[0].pinno},{family:"Above Two"}]}).countDocuments();
-           v[7]=await Register.find({$and:[{pinno:n[0].pinno},{hospital:"hyes"}]}).countDocuments();
-          v[8]=await Register.find({$and:[{pinno:n[0].pinno},{hospital:"hno"}]}).countDocuments();
-           v[9]=await Register.find({$and:[{pinno:n[0].pinno},{medical:"myes"}]}).countDocuments();
-           v[10]=await Register.find({$and:[{pinno:n[0].pinno},{medical:"mno"}]}).countDocuments();
-        v[11]=await Register.find({$and:[{pinno:n[0].pinno},{facility:"fyes"}]}).countDocuments();
-            v[12]=await Register.find({$and:[{pinno:[0].pinno},{facility:"fno"}]}).countDocuments();
-            v[13]=await Register.find({$and:[{pinno:n[0].pinno},{employee:"eyes"}]}).countDocuments();
-            v[14]=await Register.find({$and:[{pinno:n[0].pinno},{employee:"eno"}]}).countDocuments();
-           var u=[];
-           for(var i=2; i<=14;i++)
-              { u[i]=(v[i]/v[1])*5;
-              }
   
-    res.render("index",{rating: u,name:m[0].Name});
+    res.render("index");
 });
 app.get('/register', (req,res) => {
   res.render("register");
