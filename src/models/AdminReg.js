@@ -36,6 +36,7 @@ var adminSchema = new mongoose.Schema({
         type: Number
         
     },
+    image:[String],
     tokens:[
         {
             token:{

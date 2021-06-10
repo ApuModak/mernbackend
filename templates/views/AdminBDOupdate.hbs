@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="/logout" class="nav-link smoothScroll">logout</a>
+                        <a href="/logout2" class="nav-link smoothScroll">logout</a>
                 </ul>
             </div>
         </div>
@@ -48,10 +48,12 @@
                     <div class="col-lg-8 mx-auto col-md-10 col-12">
                    
  
-                      <form action="/AdminUpdate" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form">
+                      <form action="/AdminUpdate" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form" >
                       <div>
  </label><br>  
   <input type="hidden"  name="pin" value={{{records.pin}}}> 
+  <input type="hidden"  name="type" value={{{records.type}}}> 
+  <input type="hidden"  name="records" value={{{records}}}>               
  <legend>1. Is today BDO present at  panchayat?</legend> 
           <input type="radio" name="conf" value="No"/> No <br>  
           <input type="radio" name="conf"  value="Yes, Whole Day"/>Yes,Whole Day<br>  
@@ -77,10 +79,28 @@
 <label>   
     </div>
         
+        
                     
                           <div class="col-lg-5 mx-auto col-7">
                             <button type="submit" class="form-control" id="submit-button" name="submit">submit</button>
                           </div>
+
+                          </form>
+                          <br><br>
+                          <h1>Update Notification</h1>
+     <form action="/AdminUpdate" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form" enctype="multipart/form-data">
+       <input type="hidden"  name="img" value="img">
+       <input type="hidden"  name="pin" value={{{records.pin}}}> 
+       <input type="hidden"  name="type" value={{{records.type}}}>  
+       <input type="hidden"  name="records" value={{{records}}}>                                                          
+      <div class="col-lg-6 col-12">
+                            <input type="file" class="form-control" name="file" >
+                          </div>
+                          <br><br>
+        <div class="col-lg-5 mx-auto col-7">
+                            <button type="submit" class="form-control" id="submit-button" name="submit">submit</button>
+                          </div>
+
                           </div>
 
                       </form>

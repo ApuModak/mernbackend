@@ -15,6 +15,29 @@
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/survey.css">
 
+<style>
+  h1{
+    color:blue;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes example{
+    from{color: red;}
+    to{color: blue;}
+  }
+
+  strong{
+    animation-name: example2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+      }
+      @keyframes example2{
+    from{color: red;}
+    to{color: rgb(187, 255, 0);}
+  }
+</style>
+
 </head>
 <body>
 
@@ -51,11 +74,18 @@
 <br><br>
    
             <h2>    <label >* join BDO is Present<strong>{{records.member1}}</strong></label></h2>
+<br><br><br><br><br><br>
+<b><h1>Know About Latest Notification</h1></b>
 <br><br>
-                    
-      <button onclick="myfunction()">Click here for latest Notice</button>
-
-
+   <div class="row">
+                 
+       {{#each records.image}} 
+          
+     <img src="/uploads/{{this}}" width="49%" style="margin: 4px 4px 4px 4px " >
+     
+       {{/each}}
+    
+    </div>
                </div>
           </div>
      </section>
