@@ -12,6 +12,7 @@ const Register=require('./models/register');
 const AdminRegister=require('./models/AdminReg');
 const port=process.env.PORT || 3000;
 
+
 // all path setting
 
 const static_path=path.join(__dirname,"../public");
@@ -464,7 +465,7 @@ app.post('/knowplace',async (req, res)=>{
 
 
    
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log(`Express server started at port ${port}`);
 });
 
