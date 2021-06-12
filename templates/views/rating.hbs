@@ -21,7 +21,7 @@
  <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
              <i class="fa fa-unity"></i>
               WE  STAND WITH YOU
             </a>
@@ -68,7 +68,7 @@
                       <table>
                           <thead>
                               <tr>
-                           <th>about</th>
+                           <th>About</th>
                           <th>Total No</th>
                           <th>Rating</th>
                           <th> </th>
@@ -76,7 +76,7 @@
                            </thead>
                               <tbody>
                              <tr class="ques_a">
-                                 <td>KUTCHA HOUSE</td>
+                                 <td> <img src="images/icons/kutcha.jpeg" class="icons" alt=""> </td>
                                 <td>{{total.[2]}} </td>
                                 <td>{{rating.[2]}}</td>
                                <td>
@@ -88,7 +88,7 @@
                                  </tr>
                          
                             <tr class="ques_b">
-                                 <td>PUCCA HOUSE</td>
+                                 <td> <img src="images/icons/pucca.jpeg" class="icons" alt=""> </td>
                                 <td>{{total.[3]}} </td>
                                 <td>{{rating.[3]}}</td>
                                <td>
@@ -99,7 +99,7 @@
                                  </tr>
                                 
                             <tr class="ques_c">
-                                 <td>ROAD DEVELOPMENT</td>
+                                 <td> <img src="images/icons/road.jpeg" class="icons" alt=""> </td>
                                  <td>{{total.[4]}} </td>
                                 <td>{{rating.[4]}}</td>
                                <td>
@@ -110,7 +110,7 @@
                                  </tr>
 
                            <tr class="ques_d">
-                                 <td>MEDICAL FACILITY GET FAMILY</td>
+                                 <td> <img src="images/icons/medical.jpeg" class="icons" alt=""> </td>
                                 <td>{{total.[9]}} </td>
                                 <td>{{rating.[9]}}</td>
                                <td>
@@ -121,7 +121,7 @@
                                  </tr>
 
                            <tr class="ques_e">
-                                 <td>GOVERMENT FACILITY GET FAMILY</td>
+                                 <td> <img src="images/icons/govt.jpeg" class="icons" alt=""> </td>
                                 <td>{{total.[11]}} </td>
                                 <td>{{rating.[11]}}</td>
                                <td>
@@ -131,16 +131,7 @@
                               </td>
                                  </tr>
 
-                         <tr class="ques_f">
-                                 <td>NEAREST hOSPITAL</td>
-                                <td>{{total.[7]}} </td>
-                                <td>{{rating.[7]}}</td>
-                               <td>
-                              <div class="stars-outer">
-                             <div class="stars-inner"></div>
-                                 </div>
-                              </td>
-                                 </tr>
+                        
 
                                     </tbody>
                           </table>
@@ -227,8 +218,7 @@ const ratings = {
   ques_b : {{rating.[3]}},
   ques_c :{{rating.[4]}},
   ques_d : {{rating.[9]}},
-  ques_e :{{rating.[11]}},
-  ques_f :{{rating.[7]}}
+  ques_e :{{rating.[11]}}
 };
 
 const starTotal = 5;

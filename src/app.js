@@ -96,7 +96,7 @@ app.get("/logout",auth,async(req , res) =>
   }
   catch(error)
   {
-    res.status(500).send(error);
+    res.render("error");
   }
 });
 
@@ -127,6 +127,8 @@ app.get("/logout2",auth2,async(req , res) =>
   res.render("knowplace");
  
  });
+
+
  app.get('/knowBdo',async (req, res)=>{
   res.render("knowBdo");
  
@@ -181,7 +183,7 @@ app.post("/register", async (req,res) => {
          const token=await user.generateAuthToken();
         
          res.cookie("jwt",token,{
-           expires: new Date(Date.now()+1000),
+           expires: new Date(Date.now()+40000),
            httpOnly: true
          });
          const register=await user.save();
@@ -193,7 +195,7 @@ app.post("/register", async (req,res) => {
  
    catch(err)
    {
-     console.log(err);
+    res.render("error");
    }
 });
 
@@ -205,22 +207,21 @@ app.post("/register", async (req,res) => {
 app.post('/login',async (req, res)=>{
  
  try{    
+     
        const adhar=req.body.adhar;
        const password=req.body.password;
        var useradhar=await Register.find({adhar:adhar});
-       
-      const isMatch=bcrypt.compare(password,useradhar[0].password);
+     var isMatch= await bcrypt.compare(password,useradhar[0].password);
 
       const token=await useradhar[0].generateAuthToken();
         
         res.cookie("jwt",token,{
-          expires: new Date(Date.now()+20000),
+          expires: new Date(Date.now()+40000),
           httpOnly: true
         });
        
     if(  isMatch)   
         { 
-          
           var user=await AdminRegister.find({$and:[{pin:useradhar[0].Bdopin},{"type":"BDO"}]});
           var employee=await AdminRegister.find({$and:[{pin:useradhar[0].pinno},{"type":"Gram"}]});
           if(useradhar[0].pinno )
@@ -235,7 +236,7 @@ app.post('/login',async (req, res)=>{
  
  }
  catch(error)
- {res.status(400).send("invalid")}
+ {res.render("error");}
 });
 
 
@@ -264,7 +265,7 @@ app.post('/AdminReg',async (req, res)=>{
          const token=await ReAdmin.generateToken();
         
          res.cookie("jwt2",token,{
-           expires: new Date(Date.now()+20000),
+           expires: new Date(Date.now()+40000),
            httpOnly: true
          });
          
@@ -280,7 +281,7 @@ app.post('/AdminReg',async (req, res)=>{
  
    catch(err)
    {
-     console.log(err);
+    res.render("error");
    }
   });
 
@@ -299,27 +300,29 @@ app.post('/AdminReg',async (req, res)=>{
           const type=req.body.type;
           var admin=await AdminRegister.find({$and:[{pin:pin},{type:type}]});
            //console.log(useradhar[0].password);
-           const isMatch=bcrypt.compare(pass,admin[0].pass);
+           const isMatch= await bcrypt.compare(pass,admin[0].pass);
            const token=await admin[0].generateToken();
-        
          res.cookie("jwt2",token,{
-           expires: new Date(Date.now()+10000),
+           expires: new Date(Date.now()+40000),
            httpOnly: true
          });
    if( isMatch)
-     { if(type=="Gram")
+     { 
+      if(type=="Gram")
       res.status(201).render("AdminUpdate",{records : admin[0]}); 
     else
       if(type=="BDO")
         res.status(201).render("AdminBDOupdate",{records : admin[0]});
-      else
-      res.send(" not matching");}
+     }
+
+     else
+     res.send("password not matching");
    // console.log("update");
   }
 
   catch(err)
   {
-    console.log(err);
+    res.render("error");
   }
     
 });
@@ -352,12 +355,18 @@ app.post('/AdminUpdate',auth2,upload,async (req, res)=>{
     }); 
   }
 
+  req.user.tokens=req.user.tokens.filter((currElement)=>
+  {
+     return currElement.token !== req.token
+  })
+  res.clearCookie("jwt");
+
   res.status(201).render("Adminlogin"); 
 }
 
 catch(err)
 {
-  console.log(err);
+  res.render("error");
 }
   
 });
@@ -388,12 +397,18 @@ app.post('/AdminBDOupdate',auth2,upload,async (req, res)=>{
        
   }
 
+  req.user.tokens=req.user.tokens.filter((currElement)=>
+  {
+     return currElement.token !== req.token
+  })
+  res.clearCookie("jwt");
+
   res.status(201).render("Adminlogin"); 
 }
 
 catch(err)
 {
-  console.log(err);
+  res.render("error");
 }
   
 });
@@ -405,7 +420,7 @@ catch(err)
 
 app.post('/knowplace',async (req, res)=>{
  
-  try{ 
+  try{  
         const pin=req.body.gram;
           var v=[];
             v[1]=await Register.find({pinno:pin}).countDocuments();
@@ -427,7 +442,7 @@ app.post('/knowplace',async (req, res)=>{
            for(var i=2; i<14;i++)
               { u[i]=(v[i]/v[1])*5;
                 sum+=u[i];
-               console.log(v[i])};
+               };
                sum2=sum/12;
       
                var admin=await AdminRegister.updateOne({$and:[{pin:pin},{type:"Gram"}]},{
@@ -439,30 +454,15 @@ app.post('/knowplace',async (req, res)=>{
 
            
            res.status(201).render('rating', {rating: u , total: v ,name:user2[0].Name});
-
           
   
   }
   catch(error)
-  {res.status(400).send("invalid")}
+  {res.status(400).send(error)}
  });
 
 
- app.post('/knowBdo',async (req, res)=>{
  
-  try{  console.log("helo");
-        const pin=req.body.gram;
-           var user2=await AdminRegister.find({pin:pin});
-           res.status(201).render('knowBdo', {user:user2[0]});
-
-  }
-  catch(error)
-  {res.status(400).send("invalid")}
- });
-
-
-
-
 
    
 app.listen(port, () => {

@@ -52,10 +52,11 @@
                       <form action="/AdminUpdate" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="300" role="form" >
                       <div>
  </label><br> 
+   <input type="hidden"  name="img" value="bdo">
   <input type="hidden"  name="pin" value={{{records.pin}}}> 
   <input type="hidden"  name="type" value={{{records.type}}}> 
   <input type="hidden"  name="records" value={{{records}}}>               
- <legend>1. Is today Gram pradhan present at  panchayat?</legend> 
+ <legend>1. Is Gram pradhan present at the panchayat today?</legend> 
           <input type="radio" name="conf" value="No"/> No <br>  
           <input type="radio" name="conf"  value="Yes, Whole Day"/>Yes,Whole Day<br>  
           <input type="radio" name="conf"  value="Yes, Whole Day"/>Yes,Whole Day<br>  
@@ -66,7 +67,7 @@
             <input type="radio" name="conf"  value="Yes, 3 P.M - 4 P.M"/>Yes, 3 P.M - 4 P.M<br>   
           <br>  
  <br>  
-  <legend>1. Is today panchayat secretary present at bdo office?</legend><br> 
+  <legend>2. Is panchayat secretary present at the panchayat today?</legend><br> 
    <input type="radio" name="conf1" value="No"/> No <br>  
           <input type="radio" name="conf1"  value="Yes, Whole Day"/>Yes,Whole Day<br>  
           <input type="radio" name="conf1"  value="Yes, Whole Day"/>Yes,Whole Day<br>  
